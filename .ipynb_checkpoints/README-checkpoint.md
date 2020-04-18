@@ -2,11 +2,13 @@ Este repositório vai contemplar tanto a coleta de dados das APIs da RIOT quanto
 
 # Objetivo
 
-Coletar dados de partidas de todos os tiers (ferro, bronze, prata, ouro, platina, diamante, mestre, challenger) e aplicar algoritmos de clusterização para observar se é possível classificar corretamente uma partida ao seu tier correspondente.
+Coletar dados de partidas de todos tiers (ferro, bronze, prata, ouro, platina, diamante, mestre, grandmaster e challenger) e aplicar algoritmos de clusterização para observar se é possível classificar corretamente uma partida ao seu tier correspondente.
 
 # Estratégia de coleta de dados
 
-A API da Riot não possui um end point para retornar todos os nomes de jogadores de um tier, portanto precisamos de uma estratégia de primeiramente encontrar 
+A API da Riot não possui um end point para retornar todos os nomes de jogadores de um tier, portanto precisamos de uma estratégia de primeiramente encontrar um player de um elo específico. Este será nossa 'semente' e a partir dele o código coleta players aos quais jogaram com o player_semente.
+
+Assim, de posse de uma lista de players, é possível coletar o código de identificação da partida e a partir dela, acessar as estatísticas dos times.
 
 # Coleta de dados
 
@@ -16,7 +18,7 @@ Para a coleta dos dados da API da Riot não foi utilizado a biblioteca já imple
 
 O arquivo _RiotConsts.py_ possui a formatação do link das apis, e o arquivo _riotApi.py_ as definições das classes que serão utilizadas ao longo do código da coleta de dados.
 
-O _riotApi.py_ posui 4 classes: 
+O _riotApi.py_ posui 4 classes (até o momento): 
 
 _(mais classes podem ser adicioanadas ao longo do projeto)_
 
@@ -28,3 +30,5 @@ _(mais classes podem ser adicioanadas ao longo do projeto)_
 
 **- GetmatchPerChamp():** será utilizada para retornar uma lista de partidas em função de alguns filtros, com por exemplo um determinado champion.
 
+
+No arquivo _fluxograma.dio_ você pode visualizar mais detalhes da estratégia de coleta adotada.
