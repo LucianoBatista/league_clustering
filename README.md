@@ -31,4 +31,4 @@ _(mais classes podem ser adicioanadas ao longo do projeto)_
 **- GetmatchPerChamp():** será utilizada para retornar uma lista de partidas em função de alguns filtros, com por exemplo um determinado champion.
 
 
-No arquivo _fluxograma.dio_ você pode visualizar mais detalhes da estratégia de coleta adotada.
+No arquivo _fluxograma.pdf_ você pode visualizar mais detalhes da estratégia de coleta adotada.
